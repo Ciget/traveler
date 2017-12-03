@@ -1,41 +1,35 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using Traveler.Services;
 
 namespace Traveler.Controllers
 {
     [Route("api/[controller]")]
     public class CitiesController : Controller
     {
-        // GET api/values
-        [HttpGet]
-        public IEnumerable<string> Get()
+        private ICityService _cityService;
+
+        public CitiesController(ICityService cityService)
         {
-            return new string[] { "value1", "value2" };
+            _cityService = cityService;
+        }
+
+        // GET api/values
+        [HttpGet("{query}")]
+        [HttpGet]
+        public IActionResult Get(string query)
+        {
+            var cities = _cityService.Get(query);
+            return new ObjectResult(cities);
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult Get(Guid id)
         {
-            return "value";
-        }
-
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            var city = _cityService.GetById(id);
+            return new ObjectResult(city);
         }
     }
 }
