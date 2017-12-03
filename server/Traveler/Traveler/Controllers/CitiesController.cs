@@ -15,9 +15,15 @@ namespace Traveler.Controllers
             _cityService = cityService;
         }
 
+        [HttpGet]
+        public IActionResult Get()
+        {
+            var cities = _cityService.Get();
+            return new ObjectResult(cities);
+        }
+
         // GET api/values
         [HttpGet("{query}")]
-        [HttpGet]
         public IActionResult Get(string query)
         {
             var cities = _cityService.Get(query);
