@@ -1,22 +1,21 @@
 import React from 'react';
-import { StyleSheet, ScrollView } from 'react-native';
-
-import CityListComponent from './src/components/CityListComponent';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default class App extends React.Component {
   render() {
-      return (<ScrollView style={styles.container}>
-        <CityListComponent/>
-        </ScrollView>
+    return (
+      <View style={styles.container}>
+        <Text>Open up App.js to start working on your app!</Text>
+      </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     backgroundColor: '#fff',
-    marginTop:30,
-    marginLeft:5,
-    marginRight:5
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
