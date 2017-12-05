@@ -1,14 +1,18 @@
 import React, { Component } from "react";
-import { View } from "react-native";
+import { Button, InputValidation } from "../components/common";
+import CommonStyles from "../styles";
+import * as actions from "../actions";
+import { View, Text, TextInput, Image, StyleSheet } from "react-native";
 
-export class LoginScreen extends Component {
+export class SignInScreen extends Component {
   render() {
     return (
       <View>
+        <Text>Sign In</Text>
         <Image
           style={styles.logo}
           resizeMode="contain"
-          source={require("../assets/login_logo.png")}
+          source={require("../../assets/logo.png")}
         />
         <TextInput name="email" type="email" label="Email" />
 
