@@ -5,5 +5,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <ActiveDebugProfile>Traveler</ActiveDebugProfile>
+    <ShowAllFiles>false</ShowAllFiles>
+    <AutoRefresh>false</AutoRefresh>
   </PropertyGroup>
 </Project>

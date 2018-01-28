@@ -1,9 +1,8 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Traveler.Models;
 
-namespace Traveler.Services
+namespace Traveler.Interfaces
 {
     public interface IPlaceService
     {

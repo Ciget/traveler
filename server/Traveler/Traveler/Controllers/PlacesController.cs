@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using Traveler.Interfaces;
 using Traveler.Services;
 
 namespace Traveler.Controllers

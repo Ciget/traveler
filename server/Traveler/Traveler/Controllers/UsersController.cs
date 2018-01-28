@@ -1,16 +1,18 @@
 ﻿using System;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 using Traveler.Interfaces;
 
 namespace Traveler.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
-    public class CitiesController : Controller
+    public class UsersController : Controller
     {
         private readonly IGuideService _guideService;
 
-        public CitiesController(IGuideService guideService)
+        public UsersController(IGuideService guideService)
         {
             _guideService = guideService;
         }

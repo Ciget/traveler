@@ -1,20 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using MongoDB.Bson;
 
 namespace Traveler.Models
 {
     public class City
     {
-        public Guid Id { get; set; }
+        public ObjectId Id { get; set; }
         public string Name { get; set; }
+        public string Country { get; set; }
         public string Description { get; set; }
-        public string Thumbnail { get; set; }
-        public string ThumbnailFull { get; set; }
+        public List<ObjectId> Thumbnails { get; set; }
         public List<Place> Places { get; set; }
+        public decimal Price { get; set; }
 
         public City()
         {
             Places = new List<Place>();
+            Thumbnails = new List<ObjectId>();
         }
     }
 }
